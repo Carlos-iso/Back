@@ -1,10 +1,10 @@
 "use strict";
 
-const repository = require("../repositories/customer-repository");
+const repository = require("../repositories/ban-repository");
 
 exports.get = async (req, res, next) => {
   try {
-    var data = await repository.get();
+    var data = await repository.getExist();
     res.status(200).send(data);
   } catch (e) {
     res.status(500).send({
