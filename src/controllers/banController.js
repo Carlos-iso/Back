@@ -4,7 +4,7 @@ const repository = require("../repositories/ban-repository");
 
 exports.get = async (req, res, next) => {
   try {
-    var data = await repository.getExist();
+    var data = await repository.get();
     res.status(200).send(data);
   } catch (e) {
     res.status(500).send({
